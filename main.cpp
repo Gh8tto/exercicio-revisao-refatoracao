@@ -1,64 +1,34 @@
-#include "Engenheiro.cpp"
-#include "Vendedor.cpp"
+#include "Engenheiro.hpp"
+#include "Vendedor.hpp"
+#include "Empregado.hpp"
+#include <iostream>
+using namespace std;
 
-int main() {
+int main () {
 
   Engenheiro eng1;
-  eng1.nome = "Joao Snow";
-  eng1.salarioHora = 35;
-  eng1.projetos = 3; 
-  std::cout << "Nome: " << eng1.nome << std::endl;
-  std::cout << "Salario Mes: " << eng1.pagamentoMes(9.5) << std::endl;
-  std::cout << "Projetos: " << eng1.projetos << std::endl;
-  std::cout << std::endl;
+  eng1.setEngenheiro ( &eng1, 3, "Joao Snow", 35.0  );
+  eng1.mostraEngenheiro ( &eng1, 9.5 );
   
   Engenheiro eng2;
-  eng2.nome = "Daniela Targaryen";
-  eng2.salarioHora = 30;
-  eng2.projetos = 1; 
-  std::cout << "Nome: " << eng2.nome << std::endl;
-  std::cout << "Salario Mes: " << eng2.pagamentoMes(8) << std::endl;
-  std::cout << "Projetos: " << eng2.projetos << std::endl;  
-  std::cout << std::endl;
+  eng2.setEngenheiro ( &eng2, 1, "Daniela Targaryen", 30.0 );
+  eng2.mostraEngenheiro ( &eng2, 8 );
   
   Engenheiro eng3;
-  eng3.nome = "Bruno Stark";
-  eng3.salarioHora = 30;
-  eng3.projetos = 2; 
-  std::cout << "Nome: " << eng3.nome << std::endl;
-  std::cout << "Salario Mes: " << eng3.pagamentoMes(8) << std::endl;
-  std::cout << "Projetos: " << eng3.projetos << std::endl;  
-  std::cout << std::endl;
-  
+  eng3.setEngenheiro ( &eng3, 2, "Bruno Stark", 30 );
+  eng3.mostraEngenheiro ( &eng3, 8 );
   
   Vendedor vend1;
-  vend1.nome = "Tonho Lannister";
-  vend1.salarioHora = 20;
-  vend1.quotaMensalVendas = 5000;
-  
-  std::cout << "Nome: " << vend1.nome << std::endl;
-  std::cout << "Salario Mes: " << vend1.pagamentoMes(6) << std::endl;  
-  std::cout << "Quota vendas: " << vend1.quotaTotalAnual() << std::endl;
-  std::cout << std::endl;
+  vend1.setVendedor ( &vend1, "Tonho Lannister", 20, 5000 );
+  vend1.mostraVendedor ( &vend1, 6 );
   
   Vendedor vend2;
-  vend2.nome = "Jose Mormont";
-  vend2.salarioHora = 25;
-  vend2.quotaMensalVendas = 3000;
-  
-  std::cout << "Nome: " << vend2.nome << std::endl;
-  std::cout << "Salario Mes: " << vend2.pagamentoMes(8) << std::endl;  
-  std::cout << "Quota vendas: " << vend2.quotaTotalAnual() << std::endl; 
-  std::cout << std::endl;  
+  vend2.setVendedor ( &vend2, "Jose Mormont", 25, 3000 );
+  vend2.mostraVendedor ( &vend2, 8 );  
 	
   Vendedor vend3;
-  vend3.nome = "Sonia Stark";
-  vend3.salarioHora = 30;
-  vend3.quotaMensalVendas = 4000;
-  
-  std::cout << "Nome: " << vend3.nome << std::endl;
-  std::cout << "Salario Mes: " << vend3.pagamentoMes(8) << std::endl;  
-  std::cout << "Quota vendas: " << vend3.quotaTotalAnual() << std::endl;  
+  vend3.setVendedor ( &vend3, "Sonia Stark", 30, 4000 );
+  vend3.mostraVendedor ( &vend3, 8 ); 
   
   return 0;	
 }

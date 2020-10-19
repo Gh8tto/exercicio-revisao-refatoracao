@@ -1,14 +1,21 @@
 #include <string>
-#include "Empregado.hpp"
+#include "Vendedor.hpp"
+using namespace std;
+#define ANO 12
 
-class Vendedor : public Empregado {
+void Vendedor::setVendedor ( Vendedor *acesso, string _nome, double _salarioHora, double _quotaMV ) {
+  acesso->nome = _nome;
+  acesso->salarioHora = _salarioHora;
+  acesso->quotaMensalVendas = _quotaMV;
+}
 
-  public:
-    std::string nome;  	  
-	
-	double quotaTotalAnual() {
-	  return quotaMensalVendas * 12;
-	}
-	
-};
+void Vendedor::mostraVendedor ( Vendedor *acesso, double horasTrabalhadas  ) {
+  cout << "Nome: " << acesso->nome << endl;
+  cout << "Salario Mes: " << acesso->pagamentoMes( horasTrabalhadas )  << endl;
+  cout << "Quota vendas: " << acesso->quotaTotalAnual() << endl;
+  cout << endl;
+}
 
+double Vendedor::quotaTotalAnual () {
+	return ( quotaMensalVendas * ANO );
+}
